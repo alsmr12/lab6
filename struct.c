@@ -38,7 +38,7 @@ List *list_input() {
     else {
         list -> head = NULL;
     }
-    list -> tail -> next = NULL;
+    // list -> tail -> next = NULL;
     return list;
 }
 

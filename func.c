@@ -14,13 +14,12 @@ int func(List *list) {
     Item *p = list -> head;
     char z = '+';
     int res = 0;
-    int op = 0;
+    int op;
     int e1 = 0, e2 = 0;
     while (e1 == 0) {
         op = 0;
         while ((p -> value != ' ') && e2 == 0) {
             op = (int)(p -> value) - 48 + op * 10;
-            //printf("\nop = %d",op);
             if (p -> next == NULL) e2 = 1;
             else p = p -> next;
         }
@@ -58,5 +57,6 @@ int func(List *list) {
         }
         res = res / 10;
     }
+    list -> tail -> next = NULL;
     return 0;
 }
