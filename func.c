@@ -31,8 +31,11 @@ int func(List *list) {
             if (p != list -> tail) {
                 p = p -> next;
                 z = p -> value;
-                p = p -> next;
-                p = p -> next;
+                if (z != '+' && z != '-') return 1;
+                if (p != list -> tail) p = p -> next;
+                else return 1;
+                if (p != list -> tail) p = p -> next;
+                else return 1;
             }
             else e1 = 1;  
     }
