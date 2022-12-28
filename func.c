@@ -13,12 +13,14 @@ void linb(List *list, char c) {
 int func(List *list) {
     Item *p = list -> head;
     char z = '+';
-    int res = 0;
-    int op;
+    int res = 0, op;
     int e1 = 0, e2 = 0;
     while (e1 == 0) {
         op = 0;
         while ((p -> value != ' ') && e2 == 0) {
+            if ((int)(p -> value) < 48 || (int)(p -> value) > 57) {
+                return 1;
+            }
             op = (int)(p -> value) - 48 + op * 10;
             if (p -> next == NULL) e2 = 1;
             else p = p -> next;
@@ -39,6 +41,7 @@ int func(List *list) {
     linb(list, ' ');
     if (res == 0) {
         linb(list, '0');
+        list -> tail -> next = NULL;
         return 0;
     }
     if (res < 0) linb(list, '-');
