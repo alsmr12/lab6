@@ -13,9 +13,7 @@ typedef struct {
 } List;
 
 List *list_input();
-//void list_del(List *list);
 void list_print(const List *list);
 void list_free(List *list);
-//int list_push_back(List *list, char data);
 
 #endif
